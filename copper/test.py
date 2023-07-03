@@ -61,3 +61,16 @@ def Average(lst):
     print("Average of the list =", round(average, 2))
 
 print(Average(stacklenght))
+
+from numpy import linspace
+
+print(linspace(0, 90, 361))
+
+# temp0 = list(linspace(0, 90, 361))
+# angle = temp0 * 2
+# temp1 = [25] * len(temp0)
+# temp2 = [50] * len(temp0)
+# current = temp1 + temp2
+# print(list(zip(current, angle)))
+#
+# print(len(current))

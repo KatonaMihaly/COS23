@@ -28,6 +28,10 @@ def pol2cart(rho: float, phi: float):
     y = rho * math.sin(math.radians(phi))
     return x, y
 
+def deg_to_rad(angle_deg):
+    angle_rad = angle_deg * math.pi / 180
+    return angle_rad
+
 ORIGIN = Node(0.0, 0.0)
 
 class SzEReluctanceMotor(BaseModel):
@@ -42,9 +46,10 @@ class SzEReluctanceMotor(BaseModel):
         self.msh_air_rot = kwargs.get("msh_air_rot", 1)  # Air in rotor mesh size [mm]
         self.msh_steel_stator = kwargs.get("msh_steel_stator", 1)  # Stator steel mesh size [mm]
         self.msh_steel_rotor = kwargs.get("msh_steel_rotor", 1)  # Rotor steel mesh size [mm]
+        self.rotor_angle = kwargs.get("rotor_angle", 180)  # Rotor angle in mechanical degrees to 0 degrees [deg]
 
         # Excitation setup
-        I0 = kwargs.get("I0", 12.0)  # Stator current of one phase [A]
+        I0 = kwargs.get("I0", 0.0)  # Stator current of one phase [A]
         alpha = kwargs.get("alpha", 0.0)  # Offset of the current [°]
 
         slot_area = 0.000142793  # area of the slot [m^2]
@@ -54,7 +59,7 @@ class SzEReluctanceMotor(BaseModel):
         A_cond = (pow(d_cond / 2, 2)) * pi
         coil_area = Nturns * nturns * A_cond
         fill_factor = coil_area / slot_area
-        J0 = Nturns * 12.5 / slot_area
+        J0 = Nturns * I0 / slot_area
 
         self.JU = J0 * cos(radians(alpha))
         self.JV = J0 * cos(radians(alpha + 120))
@@ -169,30 +174,38 @@ class SzEReluctanceMotor(BaseModel):
         # (0,50), (0,58), (0,-50), (0,-58), (-40,35), (40,35), (-40,-35), (40,-35), (-50,0), (-58,0), (50,0), (58,0),
         self.snapshot.add_postprocessing("integration", entities, "Torque")
 
-    def build_machine(self):
+    def build_stator(self):
 
-        machine= ModelPiece('machine')
-        machine.load_piece_from_dxf(ModelDir.RESOURCES / "SzESynRM_full_model.dxf")
-        self.geom.merge_geometry(machine.geom)
+        stator= ModelPiece('stator')
+        stator.load_piece_from_dxf(ModelDir.RESOURCES / "SzESynRM_stator.dxf")
+        self.geom.merge_geometry(stator.geom)
+
+    def build_rotor(self):
+
+        rotor = ModelPiece('rotor')
+        rotor.load_piece_from_dxf(ModelDir.RESOURCES / "SzESynRM_rotor.dxf")
+        rotor.rotate(ref_point=(0, 0), alpha=self.rotor_angle)
+
+        self.geom.merge_geometry(rotor.geom)
 
     def build_material(self):
-        self.assign_material(0, 75, "air_gap")
-        self.assign_material(0, 51, "air_rot")
-        self.assign_material(0, 59, "air_rot")
-        self.assign_material(0, -51, "air_rot")
-        self.assign_material(0, -59, "air_rot")
-        self.assign_material(-40, 35, "air_rot")
-        self.assign_material(40, 35, "air_rot")
-        self.assign_material(-40, -35, "air_rot")
-        self.assign_material(40, -35, "air_rot")
-        self.assign_material(-51, 0, "air_rot")
-        self.assign_material(-59, -0, "air_rot")
-        self.assign_material(51, 0, "air_rot")
-        self.assign_material(59, -0, "air_rot")
+        self.assign_material(*Node.from_polar(75, 90 + self.rotor_angle), "air_gap")
+        self.assign_material(*Node.from_polar(51, 90 + self.rotor_angle), "air_rot")
+        self.assign_material(*Node.from_polar(59, 90 + self.rotor_angle), "air_rot")
+        self.assign_material(*Node.from_polar(51, -90 + self.rotor_angle), "air_rot")
+        self.assign_material(*Node.from_polar(59, -90 + self.rotor_angle), "air_rot")
+        self.assign_material(*Node.from_polar(55, 45 + self.rotor_angle), "air_rot")
+        self.assign_material(*Node.from_polar(55, 135 + self.rotor_angle), "air_rot")
+        self.assign_material(*Node.from_polar(55, -45 + self.rotor_angle), "air_rot")
+        self.assign_material(*Node.from_polar(55, -135 + self.rotor_angle), "air_rot")
+        self.assign_material(*Node.from_polar(51, 0 + self.rotor_angle), "air_rot")
+        self.assign_material(*Node.from_polar(59, 0 + self.rotor_angle), "air_rot")
+        self.assign_material(*Node.from_polar(51, 180 + self.rotor_angle), "air_rot")
+        self.assign_material(*Node.from_polar(59, 180 + self.rotor_angle), "air_rot")
         self.assign_material(0, 0, "air_rot")
 
-        self.assign_material(0, 35, "steel_rotor")
         self.assign_material(0, 115, "steel_stator")
+        self.assign_material(*Node.from_polar(35, 90 + self.rotor_angle), "steel_rotor")
 
         self.snapshot.add_geometry(self.geom)
 
@@ -237,7 +250,8 @@ class SzEReluctanceMotor(BaseModel):
 
     def build_geometry(self):
 
-            self.build_machine()
+            self.build_stator()
+            self.build_rotor()
             self.build_material()
             self.build_coil()
             self.build_boundary()
