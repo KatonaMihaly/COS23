@@ -55,7 +55,7 @@ class SzEReluctanceMotor(BaseModel):
         slot_area = 0.000142793  # area of the slot [m^2]
         Nturns = 8  # turns of the coil in one slot [u.]
         nturns = 20  # paralell copper conductors in one turn [u.]
-        d_cond = 0.00063  # diameter of a copper conductor based on IEC 60217-0-1:2013+AMD1:2019 [m]
+        d_cond = 0.00067  # diameter of a copper conductor based on IEC 60217-0-1:2013+AMD1:2019 [m]
         A_cond = (pow(d_cond / 2, 2)) * pi
         coil_area = Nturns * nturns * A_cond
         fill_factor = coil_area / slot_area
@@ -86,7 +86,7 @@ class SzEReluctanceMotor(BaseModel):
 
         wire = Material("copper")
         wire.lamination_type = "magnetwire"
-        wire.diameter = 0.63
+        wire.diameter = 0.67
         wire.conductivity = 58e6
         wire.meshsize = 1.0
 

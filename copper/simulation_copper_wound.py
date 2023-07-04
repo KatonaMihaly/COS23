@@ -10,16 +10,34 @@ from model_copper_wound import SzEReluctanceMotor
 def execute_model(model: SzEReluctanceMotor):
     return model(timeout=10000, cleanup=True).get("Torque", 0.0)
 
-@sim.register('sim')
+@sim.register('static')
 def avg(model, modelparams, simparams, miscparams):
     list = linspace(0, 90, 361)
-    models = [model(I0=50, rotor_angle=i) for i in list]
+    models = [model(I0=75, rotor_angle=i) for i in list]
     with Pool() as pool:
         res = pool.map(execute_model, models)
 
     result = {'Torque': res}
 
-    with open(ModelDir.DATA / f'i50a0_90r025.json', 'w', encoding='utf-8') as f:
+    with open(ModelDir.DATA / f'i75a0_90r025.json', 'w', encoding='utf-8') as f:
+        json.dump(result, f, indent=2, ensure_ascii=True)
+
+    return result
+
+@sim.register('rotating')
+def avg(model, modelparams, simparams, miscparams):
+    a = 0
+    b = 90
+    c = 361
+    rot = linspace(a + 61, b + 61, c)
+    alp = linspace(a, -b*2, c)
+    models = [model(I0=50, rotor_angle=i, alpha=j) for i, j in zip(rot, alp)]
+    with Pool() as pool:
+        res = pool.map(execute_model, models)
+
+    result = {'Torque': res}
+
+    with open(ModelDir.DATA / f'i50a0_90t61r025.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=True)
 
     return result

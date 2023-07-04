@@ -63,8 +63,13 @@ def Average(lst):
 print(Average(stacklenght))
 
 from numpy import linspace
-
-print(linspace(0, 90, 361))
+a = 0
+b = 90
+c = 361
+rot = linspace(a+61, b+61, c)
+alp = linspace(a, -b*2, c)
+print(list(zip(rot, alp)))
+print(len(list(zip(rot, alp))))
 
 # temp0 = list(linspace(0, 90, 361))
 # angle = temp0 * 2
