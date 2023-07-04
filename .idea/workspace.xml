@@ -5,15 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48c26d94-b456-41ac-8be0-64fa08dde179" name="Changes" comment="Third simulation">
-      <change afterPath="$PROJECT_DIR$/copper/data/i12a90_180r025.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/data/i12a0_90r025.json" beforeDir="false" afterPath="$PROJECT_DIR$/copper/data/i12a0_90r025.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/docs/site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/copper/docs/site/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/docs/site/sitemap.xml.gz" beforeDir="false" afterPath="$PROJECT_DIR$/copper/docs/site/sitemap.xml.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/model_copper_wound.py" beforeDir="false" afterPath="$PROJECT_DIR$/copper/model_copper_wound.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/refine_torque.py" beforeDir="false" afterPath="$PROJECT_DIR$/copper/refine_torque.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/simulation_copper_wound.py" beforeDir="false" afterPath="$PROJECT_DIR$/copper/simulation_copper_wound.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/copper/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/00cadad1-f079-40d4-9bb6-6d285f8dfbfe/P_00cadad1-f079-40d4-9bb6-6d285f8dfbfe.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/00cadad1-f079-40d4-9bb6-6d285f8dfbfe/S_00cadad1-f079-40d4-9bb6-6d285f8dfbfe.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/0340d755-927f-44bc-8336-c7b4b3c77cd8/P_0340d755-927f-44bc-8336-c7b4b3c77cd8.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/0340d755-927f-44bc-8336-c7b4b3c77cd8/S_0340d755-927f-44bc-8336-c7b4b3c77cd8.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/04875d5e-ac8b-4d5e-a0fb-6240eb79ad7d/P_04875d5e-ac8b-4d5e-a0fb-6240eb79ad7d.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/04875d5e-ac8b-4d5e-a0fb-6240eb79ad7d/S_04875d5e-ac8b-4d5e-a0fb-6240eb79ad7d.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/08284393-fe25-4933-a1d0-d057fb64b96d/P_08284393-fe25-4933-a1d0-d057fb64b96d.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/08284393-fe25-4933-a1d0-d057fb64b96d/S_08284393-fe25-4933-a1d0-d057fb64b96d.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/0e634bcc-27f8-4ef1-b45d-0ca87694fffa/P_0e634bcc-27f8-4ef1-b45d-0ca87694fffa.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/0e634bcc-27f8-4ef1-b45d-0ca87694fffa/S_0e634bcc-27f8-4ef1-b45d-0ca87694fffa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/18ddeb8a-08ca-4dad-8dc6-87204059e721/P_18ddeb8a-08ca-4dad-8dc6-87204059e721.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/18ddeb8a-08ca-4dad-8dc6-87204059e721/S_18ddeb8a-08ca-4dad-8dc6-87204059e721.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/27eacf23-a95d-4f22-b2b7-1db500920c2d/P_27eacf23-a95d-4f22-b2b7-1db500920c2d.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/27eacf23-a95d-4f22-b2b7-1db500920c2d/S_27eacf23-a95d-4f22-b2b7-1db500920c2d.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/3095eb12-a667-4254-ae1d-cb571c153293/P_3095eb12-a667-4254-ae1d-cb571c153293.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/3095eb12-a667-4254-ae1d-cb571c153293/S_3095eb12-a667-4254-ae1d-cb571c153293.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/32e68c9a-5c3e-4ec8-b6cc-692aef85a7c3/P_32e68c9a-5c3e-4ec8-b6cc-692aef85a7c3.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/32e68c9a-5c3e-4ec8-b6cc-692aef85a7c3/S_32e68c9a-5c3e-4ec8-b6cc-692aef85a7c3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/51f19190-8701-45ad-9366-f0d5192f1710/P_51f19190-8701-45ad-9366-f0d5192f1710.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/51f19190-8701-45ad-9366-f0d5192f1710/S_51f19190-8701-45ad-9366-f0d5192f1710.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/54dc42e3-5caf-4850-8ff8-92c863e0bc83/P_54dc42e3-5caf-4850-8ff8-92c863e0bc83.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/54dc42e3-5caf-4850-8ff8-92c863e0bc83/S_54dc42e3-5caf-4850-8ff8-92c863e0bc83.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/5c2d0cbb-698b-482a-9f96-443716c5577e/P_5c2d0cbb-698b-482a-9f96-443716c5577e.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/5c2d0cbb-698b-482a-9f96-443716c5577e/S_5c2d0cbb-698b-482a-9f96-443716c5577e.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/5ee6bb31-6eb9-4e1d-aea2-7e7fb772cbeb/P_5ee6bb31-6eb9-4e1d-aea2-7e7fb772cbeb.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/5ee6bb31-6eb9-4e1d-aea2-7e7fb772cbeb/S_5ee6bb31-6eb9-4e1d-aea2-7e7fb772cbeb.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/8af967b9-983a-459a-a98e-1cc6e38a7977/P_8af967b9-983a-459a-a98e-1cc6e38a7977.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/8af967b9-983a-459a-a98e-1cc6e38a7977/S_8af967b9-983a-459a-a98e-1cc6e38a7977.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/a5e89c2c-a294-4b59-b6ac-60a879d51dd6/P_a5e89c2c-a294-4b59-b6ac-60a879d51dd6.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/a5e89c2c-a294-4b59-b6ac-60a879d51dd6/S_a5e89c2c-a294-4b59-b6ac-60a879d51dd6.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/a7cead75-9d24-468c-97a7-f78cfd0b669d/P_a7cead75-9d24-468c-97a7-f78cfd0b669d.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/a7cead75-9d24-468c-97a7-f78cfd0b669d/S_a7cead75-9d24-468c-97a7-f78cfd0b669d.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/b0c6099c-5db2-4c65-8d1b-6d189a35e816/P_b0c6099c-5db2-4c65-8d1b-6d189a35e816.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/b0c6099c-5db2-4c65-8d1b-6d189a35e816/S_b0c6099c-5db2-4c65-8d1b-6d189a35e816.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/c4f58df9-a34d-4751-a330-66a49bde639d/P_c4f58df9-a34d-4751-a330-66a49bde639d.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/c4f58df9-a34d-4751-a330-66a49bde639d/S_c4f58df9-a34d-4751-a330-66a49bde639d.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/d081067f-2264-4718-b6b8-044f486cf91f/P_d081067f-2264-4718-b6b8-044f486cf91f.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/d081067f-2264-4718-b6b8-044f486cf91f/S_d081067f-2264-4718-b6b8-044f486cf91f.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/f736b542-6b00-4592-8eaf-5b8f7521e859/P_f736b542-6b00-4592-8eaf-5b8f7521e859.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/snapshots/f736b542-6b00-4592-8eaf-5b8f7521e859/S_f736b542-6b00-4592-8eaf-5b8f7521e859.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +228,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688453648595</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Third simulation">
+      <created>1688476238704</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1688476238704</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Third simulation">
+      <created>1688476247073</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688476247073</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
