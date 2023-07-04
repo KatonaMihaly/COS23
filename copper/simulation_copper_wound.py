@@ -27,17 +27,18 @@ def avg(model, modelparams, simparams, miscparams):
 @sim.register('rotating')
 def avg(model, modelparams, simparams, miscparams):
     a = 0
-    b = 90
-    c = 361
-    rot = linspace(a + 61, b + 61, c)
+    b = 30
+    c = 121
+    x = 61.25
+    rot = linspace(a + x, b + x, c)
     alp = linspace(a, -b*2, c)
-    models = [model(I0=50, rotor_angle=i, alpha=j) for i, j in zip(rot, alp)]
+    models = [model(I0=12, rotor_angle=i, alpha=j) for i, j in zip(rot, alp)]
     with Pool() as pool:
         res = pool.map(execute_model, models)
 
     result = {'Torque': res}
 
-    with open(ModelDir.DATA / f'i50a0_90t61r025.json', 'w', encoding='utf-8') as f:
+    with open(ModelDir.DATA / f'i12a0_30t61r025.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=True)
 
     return result

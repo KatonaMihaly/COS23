@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c26d94-b456-41ac-8be0-64fa08dde179" name="Changes" comment="Second simulation">
+    <list default="true" id="48c26d94-b456-41ac-8be0-64fa08dde179" name="Changes" comment="Third simulation">
+      <change afterPath="$PROJECT_DIR$/copper/data/i12a90_180r025.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/defaults/simulation.json" beforeDir="false" afterPath="$PROJECT_DIR$/copper/defaults/simulation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/data/i12a0_90r025.json" beforeDir="false" afterPath="$PROJECT_DIR$/copper/data/i12a0_90r025.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/copper/docs/site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/copper/docs/site/sitemap.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/copper/docs/site/sitemap.xml.gz" beforeDir="false" afterPath="$PROJECT_DIR$/copper/docs/site/sitemap.xml.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/copper/model_copper_wound.py" beforeDir="false" afterPath="$PROJECT_DIR$/copper/model_copper_wound.py" afterDir="false" />
@@ -58,7 +59,7 @@
       <recent name="D:\Respositories\COS23\copper" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.refine_torque">
+  <component name="RunManager" selected="Python.model_copper_wound">
     <configuration name="model_copper_wound" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="COS23" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,10 +146,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.refine_torque" />
-        <item itemvalue="Python.simulation_copper_wound" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.model_copper_wound" />
+        <item itemvalue="Python.simulation_copper_wound" />
+        <item itemvalue="Python.refine_torque" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +183,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688364252243</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Third simulation">
+      <created>1688453638606</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1688453638606</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Third simulation">
+      <created>1688453648595</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688453648595</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,6 +214,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First simulation" />
     <MESSAGE value="Second simulation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second simulation" />
+    <MESSAGE value="Third simulation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third simulation" />
   </component>
 </project>

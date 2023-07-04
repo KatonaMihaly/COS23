@@ -8,7 +8,7 @@ from digital_twin_distiller import ModelDir
 
 ModelDir.set_base(__file__)
 
-f = open(ModelDir.DATA / f'i50a0_90r025.json')
+f = open(ModelDir.DATA / f'i12a0_90r025.json')
 temp = json.load(f)
 
 df = pd.DataFrame(temp)
@@ -20,7 +20,7 @@ print(ang_max)
 # plt.plot(df['Angle'], df['Torque'])
 # plt.show()
 
-f = open(ModelDir.DATA / f'i50a0_90t61r025.json')
+f = open(ModelDir.DATA / f'i25a0_30t61r025.json')
 temp = json.load(f)
 plt.plot(temp['Torque'])
 plt.show()

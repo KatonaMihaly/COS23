@@ -64,8 +64,8 @@ print(Average(stacklenght))
 
 from numpy import linspace
 a = 0
-b = 90
-c = 361
+b = 30
+c = 121
 rot = linspace(a+61, b+61, c)
 alp = linspace(a, -b*2, c)
 print(list(zip(rot, alp)))
