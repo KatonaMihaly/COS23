@@ -8,11 +8,11 @@ from digital_twin_distiller import ModelDir
 
 ModelDir.set_base(__file__)
 
-f = open(ModelDir.DATA / f'wp0i12a0_90r025.json')
+f = open(ModelDir.DATA / f'wp0i25a24_24r1.json')
 temp = json.load(f)
 
 df = pd.DataFrame(temp)
-df['Angle'] = linspace(0, 90, 361)
+df['Angle'] = linspace(-24, 24, 49)
 
 ang_max = df.loc[df['Torque'] == df['Torque'].max()]
 print(ang_max)
@@ -23,7 +23,5 @@ print(ang_min)
 # plt.plot(df['Angle'], df['Torque'])
 # plt.show()
 
-f = open(ModelDir.DATA / f'wp0i35a0_90r025.json')
-temp = json.load(f)
 plt.plot(df['Angle'], temp['Torque'])
 plt.show()
