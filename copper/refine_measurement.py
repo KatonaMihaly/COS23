@@ -145,6 +145,7 @@ if switch == 2:
     handles.append(empty_patch)  # add new patches and labels to list
     labels.append("Measurement")
     plt.legend(handles, labels, fontsize=12)  # apply new handles and labels to plot
+    # plt.legend(fontsize=12)
 
     plt.xticks(np.arange(-24, 25, 3), np.arange(-24, 25, 3), fontsize=12)
     plt.yticks(fontsize=12)

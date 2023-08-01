@@ -47,7 +47,8 @@ class SzEReluctanceMotor(BaseModel):
         self.msh_steel_stator = kwargs.get("msh_steel_stator", 1)  # Stator steel mesh size [mm]
         self.msh_steel_rotor = kwargs.get("msh_steel_rotor", 1)  # Rotor steel mesh size [mm]
         self.rotor_angle = kwargs.get("rotor_angle", 0)  # Rotor angle in mechanical degrees to 0 degrees [deg]
-        self.delta = kwargs.get("delta", -11.25)  # Offset of the rotor angle [°]
+        self.delta = kwargs.get("delta", -19)  # Offset of the rotor angle [°]
+        # self.delta = kwargs.get("delta", -11.25)  # Offset of the rotor angle [°]
 
         # Excitation setup
         I0 = kwargs.get("I0", 25)  # Stator current of one phase [A]
@@ -85,7 +86,7 @@ class SzEReluctanceMotor(BaseModel):
         air.meshsize = 1.0
 
         wire = Material("copper")
-        wire.lamination_type = "magnetwire"
+        wire.lamination_type = "0"
         wire.diameter = 0.67
         wire.conductivity = 58e6
         wire.meshsize = 1.0
