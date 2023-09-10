@@ -47,10 +47,11 @@ class SzEReluctanceMotor(BaseModel):
         self.msh_steel_stator = kwargs.get("msh_steel_stator", 1)  # Stator steel mesh size [mm]
         self.msh_steel_rotor = kwargs.get("msh_steel_rotor", 1)  # Rotor steel mesh size [mm]
         self.rotor_angle = kwargs.get("rotor_angle", 0)  # Rotor angle in mechanical degrees to 0 degrees [deg]
-        self.delta = kwargs.get("delta", -11.25)  # Offset of the rotor angle [°]
+        self.delta = kwargs.get("delta", -8.5)  # Offset of the rotor angle [°]
+        # self.delta = kwargs.get("delta", -11.25)  # Offset of the rotor angle [°]
 
         # Excitation setup
-        I0 = kwargs.get("I0", 0)  # Stator current of one phase [A]
+        I0 = kwargs.get("I0", 35)  # Stator current of one phase [A]
         alpha = kwargs.get("alpha", 0)  # Current angle [°]
         slot_area = 0.000142793  # area of the slot [m^2]
         Nturns = 8  # turns of the coil in one slot [u.]
@@ -73,7 +74,7 @@ class SzEReluctanceMotor(BaseModel):
         femm_metadata.file_metrics_name = self.file_solution
         femm_metadata.unit = "millimeters"
         femm_metadata.smartmesh = True
-        femm_metadata.depth = 78
+        femm_metadata.depth = 70
 
         self.platform = Femm(femm_metadata)
         self.snapshot = Snapshot(self.platform)

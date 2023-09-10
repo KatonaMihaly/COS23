@@ -6,7 +6,7 @@ import matplotlib.patches as mpatches
 #  0 - 25An, 1 - 25Ap, 2 - 25Afull
 #  3 - 35An, 4 - 35Ap, 5 - 35Afull
 #  6 - 12An, 7 - 12Ap, 8 - 12Afull
-switch = 8
+switch = 5
 if switch == 0:
 
     file_path = 'measurement/25A_negative.dat'
@@ -115,9 +115,14 @@ if switch == 2:
     df = pd.concat([df1, df2], axis=1)
     df = df.reset_index(drop=True)
 
-    mes = pd.read_json('data/wp0i25a24_24r025l78.json')
-    mes['Angle'] = np.linspace(-24, 24, len(mes['Torque']))
-    print(mes)
+    mes1 = pd.read_json('data/H_A36_wp0i25a24_24r025l70.json')
+    mes2 = pd.read_json('data/H_S235_wp0i25a24_24r025l70.json')
+    mes3 = pd.read_json('data/H_M36_wp0i25a24_24r025l70.json')
+    mes4 = pd.read_json('data/H_MES_wp0i25a24_24r025l70ag06mm.json')
+    mes5 = pd.read_json('data/H_MES_wp0i25a24_24r025l70ag08mm.json')
+    mes6 = pd.read_json('data/H_MES_wp0i25a24_24r025l70ag1mm.json')
+
+    mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
 
     df3 = pd.read_json('measurement/results25Ap.json')
     df4 = pd.read_json('measurement/results25An.json')
@@ -140,7 +145,12 @@ if switch == 2:
                 df.iloc[:, 32].dropna(), df.iloc[:, 33].dropna(), df.iloc[:, 34].dropna(), df.iloc[:, 35].dropna()]
 
     plt.boxplot(y_values, positions=x_values, showfliers=False)
-    plt.plot(mes['Angle'], mes['Torque'], label='Simulation (25A)')
+    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (25A) 70mm A36 AG:1mm')
+    plt.plot(mes1['Angle'], -2 * mes2['Torque'], label='Simulation (25A) 70mm S235 AG:1mm')
+    plt.plot(mes1['Angle'], -2 * mes3['Torque'], label='Simulation (25A) 70mm M36 AG:1mm')
+    plt.plot(mes1['Angle'], -2 * mes4['Torque'], label='Simulation (25A) 70mm MES AG:0.6mm')
+    plt.plot(mes1['Angle'], -2 * mes5['Torque'], label='Simulation (25A) 70mm MES AG:0.8mm')
+    plt.plot(mes1['Angle'], -2 * mes6['Torque'], label='Simulation (25A) 70mm MES AG:1.0mm')
 
     handles, labels = plt.gca().get_legend_handles_labels()  # get existing handles and labels
     empty_patch = mpatches.Patch(color='none', label='Extra label')  # create a patch with no color
@@ -155,7 +165,7 @@ if switch == 2:
     plt.ylabel('Static torque [Nm]', fontsize=12)
     plt.grid()
 
-    plt.savefig('media/wp0i25a24_24r1l78.png', dpi=300)
+    plt.savefig('media/ST_H_MES_AG_ALL_VAR_i25A.png', dpi=300)
     plt.show()
 
 if switch == 3:
@@ -265,9 +275,14 @@ if switch == 5:
     df.columns = [np.arange(0, 29, 1)]
     print(df.to_string())
 
-    mes = pd.read_json('data/wp0i35a24_24r025l78.json')
-    mes['Angle'] = np.linspace(-24, 24, len(mes['Torque']))
-    print(mes)
+    mes1 = pd.read_json('data/H_A36_wp0i35a24_24r025l70.json')
+    mes2 = pd.read_json('data/H_S235_wp0i35a24_24r025l70.json')
+    mes3 = pd.read_json('data/H_M36_wp0i35a24_24r025l70.json')
+    mes4 = pd.read_json('data/H_MES_wp0i35a24_24r025l70ag06mm.json')
+    mes5 = pd.read_json('data/H_MES_wp0i35a24_24r025l70ag08mm.json')
+    mes6 = pd.read_json('data/H_MES_wp0i35a24_24r025l70ag1mm.json')
+
+    mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
 
     df3 = pd.read_json('measurement/results35Ap.json')
     df4 = pd.read_json('measurement/results35An.json')
@@ -287,8 +302,15 @@ if switch == 5:
                 df.iloc[:, 24].dropna(), df.iloc[:, 25].dropna(), df.iloc[:, 26].dropna(), df.iloc[:, 27].dropna(),
                 df.iloc[:, 28].dropna()]
 
+    print(y_values)
+
     plt.boxplot(y_values, positions=x_values, showfliers=False)
-    plt.plot(mes['Angle'], -mes['Torque'], label='Simulation (35A)')
+    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (35A) 70mm A36 AG:1mm')
+    plt.plot(mes1['Angle'], -2 * mes2['Torque'], label='Simulation (35A) 70mm S235 AG:1mm')
+    plt.plot(mes1['Angle'], -2 * mes3['Torque'], label='Simulation (35A) 70mm M36 AG:1mm')
+    plt.plot(mes1['Angle'], -2 * mes4['Torque'], label='Simulation (35A) 70mm MES AG:0.6mm')
+    plt.plot(mes1['Angle'], -2 * mes5['Torque'], label='Simulation (35A) 70mm MES AG:0.8mm')
+    plt.plot(mes1['Angle'], -2 * mes6['Torque'], label='Simulation (35A) 70mm MES AG:1.0mm')
 
     handles, labels = plt.gca().get_legend_handles_labels()  # get existing handles and labels
     empty_patch = mpatches.Patch(color='none', label='Extra label')  # create a patch with no color
@@ -302,7 +324,7 @@ if switch == 5:
     plt.ylabel('Static torque [Nm]', fontsize=12)
     plt.grid()
 
-    plt.savefig('media/wp0i35a24_24r1l78.png', dpi=300)
+    plt.savefig('media/ST_H_MES_AG_ALL_VAR_i35A.png', dpi=300)
     plt.show()
 
 if switch == 6:
@@ -401,9 +423,14 @@ if switch == 8:
     df = pd.read_json('measurement/results12An_sub.json')
     print(df.to_string())
 
-    mes = pd.read_json('data/wp0i12a0_24r025l78.json')
-    mes['Angle'] = np.linspace(0, 24, len(mes['Torque']))
-    print(mes)
+    mes1 = pd.read_json('data/H_A36_wp0i12a0_24r025l70.json')
+    mes2 = pd.read_json('data/H_S235_wp0i12a0_24r025l70.json')
+    mes3 = pd.read_json('data/H_M36_wp0i12a0_24r025l70.json')
+    mes4 = pd.read_json('data/H_MES_wp0i12a0_24r025l70ag06mm.json')
+    mes5 = pd.read_json('data/H_MES_wp0i12a0_24r025l70ag08mm.json')
+    mes6 = pd.read_json('data/H_MES_wp0i12a0_24r025l70ag1mm.json')
+
+    mes1['Angle'] = np.linspace(0, 24, len(mes1['Torque']))
 
     x_values = [0, 1, 2, 3.5, 5.5, 8, 9, 12, 16.5, 18.5, 20.5]
 
@@ -412,7 +439,13 @@ if switch == 8:
                 df.iloc[:, 8].dropna(), df.iloc[:, 9].dropna(), df.iloc[:, 10].dropna()]
 
     plt.boxplot(y_values, positions=x_values, showfliers=False)
-    plt.plot(mes['Angle'], -mes['Torque'], label='Simulation (12A)')
+
+    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (12A) 70mm A36 AG:1mm')
+    plt.plot(mes1['Angle'], -2 * mes2['Torque'], label='Simulation (12A) 70mm S235 AG:1mm')
+    plt.plot(mes1['Angle'], -2 * mes3['Torque'], label='Simulation (12A) 70mm M36 AG:1mm')
+    plt.plot(mes1['Angle'], -2 * mes4['Torque'], label='Simulation (12A) 70mm MES AG:0.6mm')
+    plt.plot(mes1['Angle'], -2 * mes5['Torque'], label='Simulation (12A) 70mm MES AG:0.8mm')
+    plt.plot(mes1['Angle'], -2 * mes6['Torque'], label='Simulation (12A) 70mm MES AG:1.0mm')
 
     handles, labels = plt.gca().get_legend_handles_labels()  # get existing handles and labels
     empty_patch = mpatches.Patch(color='none', label='Extra label')  # create a patch with no color
@@ -426,5 +459,5 @@ if switch == 8:
     plt.ylabel('Static torque [Nm]', fontsize=12)
     plt.grid()
 
-    plt.savefig('media/wp0i12a0_24r1l78.png', dpi=300)
+    plt.savefig('media/ST_H_MES_AG_ALL_VAR_i12A.png', dpi=300)
     plt.show()

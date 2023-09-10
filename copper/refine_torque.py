@@ -8,26 +8,20 @@ from digital_twin_distiller import ModelDir
 
 ModelDir.set_base(__file__)
 
-f = open(ModelDir.DATA / f'wp0i25a0_90r025l70.json')
-temp = json.load(f)
+f1 = open(ModelDir.DATA / f'H_wp0i35a24_24r025l70_22,5.json')
 
-df = pd.DataFrame(temp)
-df['Angle'] = linspace(0, 90, 361)
+temp1 = json.load(f1)
 
-ang_max = df.loc[df['Torque'] == df['Torque'].max()]
-print(ang_max)
+df1 = pd.DataFrame(f1)
+df1['Angle'] = linspace(1, 48, 25)
 
-ang_min = df.loc[df['Torque'] == -(df['Torque'].abs()).min()]
-print(ang_min)
+plt.plot(df1['Angle'], temp1['Torque'])
 
-# plt.plot(df['Angle'], df['Torque'])
-# plt.show()
 
-plt.plot(df['Angle'], temp['Torque'])
-plt.xticks(np.arange(0,100,10), fontsize=12)
 plt.yticks(fontsize=12)
 plt.xlabel('Rotor position [deg]', fontsize=12)
 plt.ylabel('Torque [Nm]', fontsize=12)
 plt.grid()
-plt.savefig('media/i25a0_90r025.png', dpi=300)
+plt.legend()
+plt.savefig('media/half.png', dpi=300)
 plt.show()

@@ -483,6 +483,17 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "lvm-read"
+version = "1.21"
+description = ""
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+numpy = "*"
+
+[[package]]
 name = "markdown"
 version = "3.3.7"
 description = "Python implementation of Markdown."
@@ -630,13 +641,14 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "mkdocstrings"
-version = "0.20.0"
+version = "0.23.0"
 description = "Automatic documentation from sources, for MkDocs."
 category = "main"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 
 [package.dependencies]
+importlib-metadata = {version = ">=4.6", markers = "python_version < \"3.10\""}
 Jinja2 = ">=2.11.1"
 Markdown = ">=3.3"
 MarkupSafe = ">=1.1"
@@ -644,11 +656,12 @@ mkdocs = ">=1.2"
 mkdocs-autorefs = ">=0.3.1"
 mkdocstrings-python = {version = ">=0.5.2", optional = true, markers = "extra == \"python\""}
 pymdown-extensions = ">=6.3"
+typing-extensions = {version = ">=4.1", markers = "python_version < \"3.10\""}
 
 [package.extras]
 crystal = ["mkdocstrings-crystal (>=0.3.4)"]
-python = ["mkdocstrings-python (>=0.5.2)"]
 python-legacy = ["mkdocstrings-python-legacy (>=0.2.1)"]
+python = ["mkdocstrings-python (>=0.5.2)"]
 
 [[package]]
 name = "mkdocstrings-python"
@@ -1245,7 +1258,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<3.10"
-content-hash = "e192bf5a8fe421dfddafa1d6f6bccf00e0eadc4fa29ee41567063e4853e88f8b"
+content-hash = "5eefce76dc0806163b3096ff861581ad0e3ab886438b25f08f7857fa6204e39c"
 
 [metadata.files]
 aiofiles = []
@@ -1301,6 +1314,7 @@ isort = [
 jinja2 = []
 kiwisolver = []
 lazy-object-proxy = []
+lvm-read = []
 markdown = []
 markupsafe = []
 matplotlib = []

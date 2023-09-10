@@ -5,21 +5,21 @@ from numpy import linspace
 from digital_twin_distiller.encapsulator import Encapsulator
 from digital_twin_distiller.modelpaths import ModelDir
 from digital_twin_distiller.simulationproject import sim
-from model_copper_wound import SzEReluctanceMotor
+from model_copper_wound_half import SzEReluctanceMotorHalf
 
-def execute_model(model: SzEReluctanceMotor):
+def execute_model(model: SzEReluctanceMotorHalf):
     return model(timeout=10000, cleanup=True).get("Torque", 0.0)
 
 @sim.register('static')
 def avg(model, modelparams, simparams, miscparams):
-    list = linspace(0, 24, 97)
-    models = [model(I0=12, rotor_angle=i) for i in list]
+    list = linspace(-24, 24, 193)
+    models = [model(I0=35, rotor_angle=i) for i in list]
     with Pool() as pool:
         res = pool.map(execute_model, models)
 
     result = {'Torque': res}
 
-    with open(ModelDir.DATA / f'wp0i12a0_24r025l78.json', 'w', encoding='utf-8') as f:
+    with open(ModelDir.DATA / f'H_MES_wp0i35a24_24r025l70ag08mm.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=True)
 
     return result
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     ModelDir.set_base(__file__)
 
     # set the model for the simulation
-    sim.set_model(SzEReluctanceMotor)
+    sim.set_model(SzEReluctanceMotorHalf)
 
     model = Encapsulator(sim)
     model.port = 8080

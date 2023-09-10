@@ -83,7 +83,7 @@ from numpy import linspace
 # #
 # # print(len(current))
 
-print(linspace(0, 24, 97))
+print(linspace(-24, 24, 193))
 #
 # y = [0.0000, 0.0974, 0.1949, 0.3004, 0.3343, 0.3609, 0.3900, 0.4110, 0.4354, 0.4609, 0.4895, 0.5102,
 #                    0.5362, 0.5611, 0.5893, 0.6102, 0.6362, 0.6608, 0.6854, 0.7066, 0.7355, 0.7613, 0.7893, 0.8092,
@@ -134,3 +134,10 @@ print(linspace(0, 24, 97))
 # fillfull = full / slot_area
 # print(fillfull)
 
+Nturns = 8 # turns of the coil in one slot [u.]
+nturns = 20  # paralell copper conductors in one turn [u.]
+d_cond = 0.67  # diameter of a copper conductor based on IEC 60217-0-1:2013+AMD1:2019 [mm]
+A_cond = (pow(d_cond / 2, 2)) * pi
+coil_area = Nturns * nturns * A_cond
+
+print(coil_area*4)
