@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c26d94-b456-41ac-8be0-64fa08dde179" name="Changes" comment="Air Gap Check">
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/measurement_35A_torque_angle.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/measurement_15A_torque_angle.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/measurement_20A_torque_angle.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/measurement_25A_torque_angle.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/measurement_30A_torque_angle.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/measurement_35A_torque_angle.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/docs/site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/copper/docs/site/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/docs/site/sitemap.xml.gz" beforeDir="false" afterPath="$PROJECT_DIR$/copper/docs/site/sitemap.xml.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/model_copper_wound_half.py" beforeDir="false" afterPath="$PROJECT_DIR$/copper/model_copper_wound_half.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/refine_measurement.py" beforeDir="false" afterPath="$PROJECT_DIR$/copper/refine_measurement.py" afterDir="false" />
+    <list default="true" id="48c26d94-b456-41ac-8be0-64fa08dde179" name="Changes" comment="New Measurement data">
+      <change beforePath="$PROJECT_DIR$/copper/measurement/bhcurve/measurement_35A_torque_angle.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,7 +284,21 @@
       <option name="project" value="LOCAL" />
       <updated>1694378009818</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="New Measurement data">
+      <created>1695906442782</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1695906442782</updated>
+    </task>
+    <task id="LOCAL-00017" summary="New Measurement data">
+      <created>1695906497383</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1695906497383</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -315,6 +319,7 @@
     <MESSAGE value="Corrected simulation" />
     <MESSAGE value="With measurement." />
     <MESSAGE value="Air Gap Check" />
-    <option name="LAST_COMMIT_MESSAGE" value="Air Gap Check" />
+    <MESSAGE value="New Measurement data" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Measurement data" />
   </component>
 </project>
