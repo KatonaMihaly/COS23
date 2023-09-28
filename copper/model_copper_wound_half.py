@@ -42,7 +42,7 @@ class SzEReluctanceMotorHalf(BaseModel):
 
         # Geometric parameters
         """ source: in resources """
-        self.msh_air_gap = kwargs.get("msh_air_gap", 1)  # Airgap mesh size [mm]
+        self.msh_air_gap = kwargs.get("msh_air_gap", 0.4)  # Airgap mesh size [mm]
         self.msh_air_rot = kwargs.get("msh_air_rot", 1)  # Air in rotor mesh size [mm]
         self.msh_steel_stator = kwargs.get("msh_steel_stator", 1)  # Stator steel mesh size [mm]
         self.msh_steel_rotor = kwargs.get("msh_steel_rotor", 1)  # Rotor steel mesh size [mm]
@@ -72,7 +72,7 @@ class SzEReluctanceMotorHalf(BaseModel):
         femm_metadata.file_script_name = self.file_solver_script
         femm_metadata.file_metrics_name = self.file_solution
         femm_metadata.unit = "millimeters"
-        femm_metadata.smartmesh = True
+        femm_metadata.smartmesh = False
         femm_metadata.depth = 70
 
         self.platform = Femm(femm_metadata)

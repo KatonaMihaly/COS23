@@ -4,113 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c26d94-b456-41ac-8be0-64fa08dde179" name="Changes" comment="With measurement.">
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B010.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B020.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B030.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B040.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B050.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B060.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B070.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B080.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B090.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B100.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B101.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B102.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B103.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B104.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B105.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B106.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B107.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B108.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B109.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B110.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B111.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B112.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B113.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B114.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B115.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B116.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B117.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B118.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B119.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B120.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B121.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B122.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B123.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B124.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B125.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B126.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B127.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B128.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B129.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B130.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B131.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B132.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B133.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B134.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B135.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B136.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B137.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B138.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B139.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/B140.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_01A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_02A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_03A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_04A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_05A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_06A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_07A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_08A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_09A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_10A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_11A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_12A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_13A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_14A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_15A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_16A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_17A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_18A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_19A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_1A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_20A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_21A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_22A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_23A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_24A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_25A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_26A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_2A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_30A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_3A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_4A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_5A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_6A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_7A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_8A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/S235_9A.lvm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/model_copper_wound_half.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/refine_bhcurve.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/resources/SzESynRM_half_model_ag05mm.dxf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/resources/SzESynRM_half_model_ag06mm.dxf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/resources/SzESynRM_half_model_ag08mm.dxf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/resources/SzESynRM_half_model_ag1mm.dxf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/copper/simulation_copper_wound_half.py" afterDir="false" />
+    <list default="true" id="48c26d94-b456-41ac-8be0-64fa08dde179" name="Changes" comment="Air Gap Check">
+      <change afterPath="$PROJECT_DIR$/copper/measurement/bhcurve/measurement_35A_torque_angle.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/copper/measurement/measurement_15A_torque_angle.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/copper/measurement/measurement_20A_torque_angle.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/copper/measurement/measurement_25A_torque_angle.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/copper/measurement/measurement_30A_torque_angle.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/copper/measurement/measurement_35A_torque_angle.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/data/wp0i25a24_24r025l70.json" beforeDir="false" afterPath="$PROJECT_DIR$/copper/data/wp0i25a24_24r025l70.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/copper/docs/site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/copper/docs/site/sitemap.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/copper/docs/site/sitemap.xml.gz" beforeDir="false" afterPath="$PROJECT_DIR$/copper/docs/site/sitemap.xml.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/media/i25a0_90r025.png" beforeDir="false" afterPath="$PROJECT_DIR$/copper/media/i25a0_90r025.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/media/wp0i25a24_24r1l78.png" beforeDir="false" afterPath="$PROJECT_DIR$/copper/media/wp0i25a24_24r1l78.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/model_copper_wound.py" beforeDir="false" afterPath="$PROJECT_DIR$/copper/model_copper_wound_full.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copper/model_copper_wound_half.py" beforeDir="false" afterPath="$PROJECT_DIR$/copper/model_copper_wound_half.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/copper/refine_measurement.py" beforeDir="false" afterPath="$PROJECT_DIR$/copper/refine_measurement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/refine_torque.py" beforeDir="false" afterPath="$PROJECT_DIR$/copper/refine_torque.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/simulation_copper_wound.py" beforeDir="false" afterPath="$PROJECT_DIR$/copper/simulation_copper_wound_full.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copper/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/copper/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,22 +45,23 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Respositories/COS23/copper/resources",
+    "last_opened_file_path": "D:/Respositories/COS23/copper/measurement",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Respositories\COS23\copper\measurement" />
+      <recent name="D:\Respositories\COS23\copper\measurement\bhcurve" />
       <recent name="D:\Respositories\COS23\copper\resources" />
       <recent name="D:\Respositories\COS23\copper" />
       <recent name="D:\Respositories\COS23\copper\data" />
-      <recent name="D:\Respositories\COS23" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Respositories\COS23\copper\resources" />
-      <recent name="D:\Respositories\COS23\copper\measurement\bhcurve" />
-      <recent name="D:\Respositories\COS23\copper" />
       <recent name="D:\Respositories\COS23\copper\measurement" />
+      <recent name="D:\Respositories\COS23\copper\measurement\bhcurve" />
+      <recent name="D:\Respositories\COS23\copper\resources" />
+      <recent name="D:\Respositories\COS23\copper" />
     </key>
   </component>
   <component name="RunManager" selected="Python.refine_measurement">
@@ -381,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693232558472</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Air Gap Check">
+      <created>1694378009817</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1694378009818</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -401,6 +314,7 @@
     <MESSAGE value="Third simulation" />
     <MESSAGE value="Corrected simulation" />
     <MESSAGE value="With measurement." />
-    <option name="LAST_COMMIT_MESSAGE" value="With measurement." />
+    <MESSAGE value="Air Gap Check" />
+    <option name="LAST_COMMIT_MESSAGE" value="Air Gap Check" />
   </component>
 </project>

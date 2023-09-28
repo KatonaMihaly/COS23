@@ -5,8 +5,13 @@ import matplotlib.patches as mpatches
 
 #  0 - 25An, 1 - 25Ap, 2 - 25Afull
 #  3 - 35An, 4 - 35Ap, 5 - 35Afull
-#  6 - 12An, 7 - 12Ap, 8 - 12Afull
-switch = 5
+#  6 - 12An, 7 - 12Ap, 8 - 12Ahalf
+#  9 - 15Afull
+#  10 - 20Afull
+#  11 - 25full
+#  12 - 30Afull
+#  13 - 35Afull
+switch = 9
 if switch == 0:
 
     file_path = 'measurement/25A_negative.dat'
@@ -121,14 +126,15 @@ if switch == 2:
     mes4 = pd.read_json('data/H_MES_wp0i25a24_24r025l70ag06mm.json')
     mes5 = pd.read_json('data/H_MES_wp0i25a24_24r025l70ag08mm.json')
     mes6 = pd.read_json('data/H_MES_wp0i25a24_24r025l70ag1mm.json')
-
+    mes7 = pd.read_csv('measurement/measurement_25A_torque_angle.csv')
+    mes7 = mes7.drop(mes7.columns[[4, 5, 6, 7, 8, 9, 10, 11]], axis=1)  # df.columns is zero-based pd.Index
+    print(mes7)
     mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
 
     df3 = pd.read_json('measurement/results25Ap.json')
     df4 = pd.read_json('measurement/results25An.json')
     df5 = pd.concat([df3, df4], axis=1)
     df5 = df5.reset_index(drop=True)
-    print(df5)
 
 
     x_values = [-20.5, -19.75, -17, -16, -15.5, -14.75, -13, -12.5, -11, -10, -9, -8, -6, -5.5, -4, -3, -2, -1, 0, 1,
@@ -145,12 +151,15 @@ if switch == 2:
                 df.iloc[:, 32].dropna(), df.iloc[:, 33].dropna(), df.iloc[:, 34].dropna(), df.iloc[:, 35].dropna()]
 
     plt.boxplot(y_values, positions=x_values, showfliers=False)
-    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (25A) 70mm A36 AG:1mm')
-    plt.plot(mes1['Angle'], -2 * mes2['Torque'], label='Simulation (25A) 70mm S235 AG:1mm')
-    plt.plot(mes1['Angle'], -2 * mes3['Torque'], label='Simulation (25A) 70mm M36 AG:1mm')
-    plt.plot(mes1['Angle'], -2 * mes4['Torque'], label='Simulation (25A) 70mm MES AG:0.6mm')
+    # plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (25A) 70mm A36 AG:1mm')
+    # plt.plot(mes1['Angle'], -2 * mes2['Torque'], label='Simulation (25A) 70mm S235 AG:1mm')
+    # plt.plot(mes1['Angle'], -2 * mes3['Torque'], label='Simulation (25A) 70mm M36 AG:1mm')
+    # plt.plot(mes1['Angle'], -2 * mes4['Torque'], label='Simulation (25A) 70mm MES AG:0.6mm')
     plt.plot(mes1['Angle'], -2 * mes5['Torque'], label='Simulation (25A) 70mm MES AG:0.8mm')
-    plt.plot(mes1['Angle'], -2 * mes6['Torque'], label='Simulation (25A) 70mm MES AG:1.0mm')
+    # plt.plot(mes1['Angle'], -2 * mes6['Torque'], label='Simulation (25A) 70mm MES AG:1.0mm')
+    plt.scatter(mes7['Angle'], mes7['T_min'], label="Measurement (25A) Minimum")
+    plt.scatter(mes7['Angle'], mes7['T_avg'], label="Measurement (25A) Average")
+    plt.scatter(mes7['Angle'], mes7['T_max'], label="Measurement (25A) Maximum")
 
     handles, labels = plt.gca().get_legend_handles_labels()  # get existing handles and labels
     empty_patch = mpatches.Patch(color='none', label='Extra label')  # create a patch with no color
@@ -460,4 +469,105 @@ if switch == 8:
     plt.grid()
 
     plt.savefig('media/ST_H_MES_AG_ALL_VAR_i12A.png', dpi=300)
+    plt.show()
+switch = 13
+if switch == 9:
+    mes1 = pd.read_json('data/H_MES_wp0i15a24_24r025l70ag08mm.json')
+    mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
+    mes2 = pd.read_csv('measurement/measurement_15A_torque_angle.csv')
+
+
+    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (15A)')
+    plt.scatter(mes2['Angle'], mes2['T_min'], label="Measurement (15A) Minimum", color="r", marker=".")
+    plt.scatter(mes2['Angle'], mes2['T_avg'], label="Measurement (15A) Average", color="g", marker=".")
+    plt.scatter(mes2['Angle'], mes2['T_max'], label="Measurement (15A) Maximum", color="b", marker=".")
+
+    plt.xticks(np.arange(-24, 25, 4), np.arange(-24, 25, 4), fontsize=12)
+    plt.yticks(np.arange(-4, 5, 1), np.arange(-4, 5, 1), fontsize=12)
+    plt.xlabel('Rotor position [deg]', fontsize=12)
+    plt.ylabel('Static torque [Nm]', fontsize=12)
+    plt.grid()
+    plt.legend()
+
+    plt.savefig('media/ST_H_MES_AG_ALL_VAR_i15A.png', dpi=300)
+    plt.show()
+
+if switch == 10:
+    mes1 = pd.read_json('data/H_MES_wp0i20a24_24r025l70ag08mm.json')
+    mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
+    mes2 = pd.read_csv('measurement/measurement_20A_torque_angle.csv')
+
+    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (20A)')
+    plt.scatter(mes2['Angle'], mes2['T_min'], label="Measurement (20A) Minimum", color="r", marker=".")
+    plt.scatter(mes2['Angle'], mes2['T_avg'], label="Measurement (20A) Average", color="g", marker=".")
+    plt.scatter(mes2['Angle'], mes2['T_max'], label="Measurement (20A) Maximum", color="b", marker=".")
+
+    plt.xticks(np.arange(-24, 25, 4), np.arange(-24, 25, 4), fontsize=12)
+    plt.yticks(np.arange(-6, 7, 1), np.arange(-6, 7, 1), fontsize=12)
+    plt.xlabel('Rotor position [deg]', fontsize=12)
+    plt.ylabel('Static torque [Nm]', fontsize=12)
+    plt.grid()
+    plt.legend()
+
+    plt.savefig('media/ST_H_MES_AG_ALL_VAR_i20A.png', dpi=300)
+    plt.show()
+
+if switch == 11:
+    mes1 = pd.read_json('data/H_MES_wp0i25a24_24r025l70ag08mm.json')
+    mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
+    mes2 = pd.read_csv('measurement/measurement_25A_torque_angle.csv')
+
+    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (25A)')
+    plt.scatter(mes2['Angle'], mes2['T_min'], label="Measurement (25A) Minimum", color="r", marker=".")
+    plt.scatter(mes2['Angle'], mes2['T_avg'], label="Measurement (25A) Average", color="g", marker=".")
+    plt.scatter(mes2['Angle'], mes2['T_max'], label="Measurement (25A) Maximum", color="b", marker=".")
+
+    plt.xticks(np.arange(-24, 25, 4), np.arange(-24, 25, 4), fontsize=12)
+    plt.yticks(np.arange(-8, 9, 2), np.arange(-8, 9, 2), fontsize=12)
+    plt.xlabel('Rotor position [deg]', fontsize=12)
+    plt.ylabel('Static torque [Nm]', fontsize=12)
+    plt.grid()
+    plt.legend()
+
+    plt.savefig('media/ST_H_MES_AG_ALL_VAR_i25A.png', dpi=300)
+    plt.show()
+
+if switch == 12:
+    mes1 = pd.read_json('data/H_MES_wp0i30a24_24r025l70ag08mm.json')
+    mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
+    mes2 = pd.read_csv('measurement/measurement_30A_torque_angle.csv')
+
+    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (30A)')
+    plt.scatter(mes2['Angle'], mes2['T_min'], label="Measurement (30A) Minimum", color="r", marker=".")
+    plt.scatter(mes2['Angle'], mes2['T_avg'], label="Measurement (30A) Average", color="g", marker=".")
+    plt.scatter(mes2['Angle'], mes2['T_max'], label="Measurement (30A) Maximum", color="b", marker=".")
+
+    plt.xticks(np.arange(-24, 25, 4), np.arange(-24, 25, 4), fontsize=12)
+    plt.yticks(np.arange(-9, 10, 2), np.arange(-9, 10, 2), fontsize=12)
+    plt.xlabel('Rotor position [deg]', fontsize=12)
+    plt.ylabel('Static torque [Nm]', fontsize=12)
+    plt.grid()
+    plt.legend()
+
+    plt.savefig('media/ST_H_MES_AG_ALL_VAR_i30A.png', dpi=300)
+    plt.show()
+
+if switch == 13:
+    mes1 = pd.read_json('data/H_MES_wp0i35a24_24r025l70ag08mm.json')
+    mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
+    mes2 = pd.read_csv('measurement/measurement_35A_torque_angle.csv')
+
+    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (35A)')
+    plt.scatter(mes2['Angle'], mes2['T_min'], label="Measurement (35A) Minimum", color="r", marker=".")
+    plt.scatter(mes2['Angle'], mes2['T_avg'], label="Measurement (35A) Average", color="g", marker=".")
+    plt.scatter(mes2['Angle'], mes2['T_max'], label="Measurement (35A) Maximum", color="b", marker=".")
+
+    plt.xticks(np.arange(-24, 25, 4), np.arange(-24, 25, 4), fontsize=12)
+    plt.yticks(np.arange(-9, 10, 2), np.arange(-9, 10, 2), fontsize=12)
+    plt.xlabel('Rotor position [deg]', fontsize=12)
+    plt.ylabel('Static torque [Nm]', fontsize=12)
+    plt.grid()
+    plt.legend()
+
+    plt.savefig('media/ST_H_MES_AG_ALL_VAR_i35A.png', dpi=300)
     plt.show()
