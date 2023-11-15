@@ -13,13 +13,13 @@ def execute_model(model: SzEReluctanceMotorHalf):
 @sim.register('static')
 def avg(model, modelparams, simparams, miscparams):
     list = linspace(-24, 24, 193)
-    models = [model(I0=35, rotor_angle=i) for i in list]
+    models = [model(I0=25, rotor_angle=i) for i in list]
     with Pool() as pool:
         res = pool.map(execute_model, models)
 
     result = {'Torque': res}
 
-    with open(ModelDir.DATA / f'H_MES_wp0i35a24_24r025l70ag08mm.json', 'w', encoding='utf-8') as f:
+    with open(ModelDir.DATA / f'H_MES_wp0i25a24_24r025l70ag08mm.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=True)
 
     return result

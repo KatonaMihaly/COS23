@@ -470,7 +470,7 @@ if switch == 8:
 
     plt.savefig('media/ST_H_MES_AG_ALL_VAR_i12A.png', dpi=300)
     plt.show()
-switch = 13
+switch = 11
 if switch == 9:
     mes1 = pd.read_json('data/H_MES_wp0i15a24_24r025l70ag08mm.json')
     mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
@@ -513,6 +513,7 @@ if switch == 10:
     plt.show()
 
 if switch == 11:
+    plt.figure(figsize=(15, 6))
     mes1 = pd.read_json('data/H_MES_wp0i25a24_24r025l70ag08mm.json')
     mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
     mes2 = pd.read_csv('measurement/measurement_25A_torque_angle.csv')
