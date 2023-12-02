@@ -123,7 +123,7 @@ if switch == 1:
 
     df_bhv.to_pickle('measurement/df_bhv')
 
-df_bhv = pd.read_pickle('measurement/df_bhv')
+df_bhv = pd.read_pickle('measurement/bhcurve/df_bhv')
 # f = json.load('measurement/df_bhv.json')
 # print(f)
 # # df_bhv = pd.read_json(f)

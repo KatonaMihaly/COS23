@@ -14,7 +14,7 @@ import matplotlib.patches as mpatches
 switch = 9
 if switch == 0:
 
-    file_path = 'measurement/25A_negative.dat'
+    file_path = 'measurement/torque/raw/25A_negative.dat'
     data = pd.read_csv(file_path, delimiter='\t', header=None)
     data = data.replace(',', '.', regex=True)
     data = data.apply(pd.to_numeric, errors='coerce')
@@ -63,7 +63,7 @@ if switch == 0:
 
 if switch == 1:
 
-    file_path = 'measurement/25A_positive.dat'
+    file_path = 'measurement/torque/raw/25A_positive.dat'
     data = pd.read_csv(file_path, delimiter='\t', header=None)
     data = data.replace(',', '.', regex=True)
     data = data.apply(pd.to_numeric, errors='coerce')
@@ -115,8 +115,8 @@ if switch == 1:
     plt.show()
 
 if switch == 2:
-    df1 = pd.read_json('measurement/results25Ap_sub.json')
-    df2 = pd.read_json('measurement/results25An_sub.json')
+    df1 = pd.read_json('measurement/torque/refined/results25Ap_sub.json')
+    df2 = pd.read_json('measurement/torque/refined/results25An_sub.json')
     df = pd.concat([df1, df2], axis=1)
     df = df.reset_index(drop=True)
 
@@ -126,13 +126,13 @@ if switch == 2:
     mes4 = pd.read_json('data/H_MES_wp0i25a24_24r025l70ag06mm.json')
     mes5 = pd.read_json('data/H_MES_wp0i25a24_24r025l70ag08mm.json')
     mes6 = pd.read_json('data/H_MES_wp0i25a24_24r025l70ag1mm.json')
-    mes7 = pd.read_csv('measurement/measurement_25A_torque_angle.csv')
+    mes7 = pd.read_csv('measurement/torque/measurement_25A_torque_angle.csv')
     mes7 = mes7.drop(mes7.columns[[4, 5, 6, 7, 8, 9, 10, 11]], axis=1)  # df.columns is zero-based pd.Index
     print(mes7)
     mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
 
-    df3 = pd.read_json('measurement/results25Ap.json')
-    df4 = pd.read_json('measurement/results25An.json')
+    df3 = pd.read_json('measurement/torque/refined/results25Ap.json')
+    df4 = pd.read_json('measurement/torque/refined/results25An.json')
     df5 = pd.concat([df3, df4], axis=1)
     df5 = df5.reset_index(drop=True)
 
@@ -179,7 +179,7 @@ if switch == 2:
 
 if switch == 3:
 
-    file_path = 'measurement/35A_negative.dat'
+    file_path = 'measurement/torque/raw/35A_negative.dat'
     data = pd.read_csv(file_path, delimiter='\t', header=None)
     data = data.replace(',', '.', regex=True)
     data = data.apply(pd.to_numeric, errors='coerce')
@@ -226,7 +226,7 @@ if switch == 3:
 
 if switch == 4:
 
-    file_path = 'measurement/35A_positive.dat'
+    file_path = 'measurement/torque/raw/35A_positive.dat'
     data = pd.read_csv(file_path, delimiter='\t', header=None)
     data = data.replace(',', '.', regex=True)
     data = data.apply(pd.to_numeric, errors='coerce')
@@ -275,8 +275,8 @@ if switch == 4:
     plt.show()
 
 if switch == 5:
-    df1 = pd.read_json('measurement/results35Ap_sub.json')
-    df2 = pd.read_json('measurement/results35An_sub.json')
+    df1 = pd.read_json('measurement/torque/refined/results35Ap_sub.json')
+    df2 = pd.read_json('measurement/torque/refined/results35An_sub.json')
     df = pd.concat([df1, df2], axis=1)
     df = df.reset_index(drop=True)
     df.columns = [np.arange(0, 30, 1)]
@@ -293,8 +293,8 @@ if switch == 5:
 
     mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
 
-    df3 = pd.read_json('measurement/results35Ap.json')
-    df4 = pd.read_json('measurement/results35An.json')
+    df3 = pd.read_json('measurement/torque/refined/results35Ap.json')
+    df4 = pd.read_json('measurement/torque/refined/results35An.json')
     df5 = pd.concat([df3, df4], axis=1)
     df5 = df5.reset_index(drop=True)
 
@@ -338,7 +338,7 @@ if switch == 5:
 
 if switch == 6:
 
-    file_path = 'measurement/12A_negative.dat'
+    file_path = 'measurement/torque/raw/12A_negative.dat'
     data = pd.read_csv(file_path, delimiter='\t', header=None)
     data = data.replace(',', '.', regex=True)
     data = data.apply(pd.to_numeric, errors='coerce')
@@ -380,7 +380,7 @@ if switch == 6:
 
 if switch == 7:
 
-    file_path = 'measurement/12A_positive.dat'
+    file_path = 'measurement/torque/raw/12A_positive.dat'
     data = pd.read_csv(file_path, delimiter='\t', header=None)
     data = data.replace(',', '.', regex=True)
     data = data.apply(pd.to_numeric, errors='coerce')
@@ -429,7 +429,7 @@ if switch == 7:
     plt.show()
 
 if switch == 8:
-    df = pd.read_json('measurement/results12An_sub.json')
+    df = pd.read_json('measurement/torque/refined/results12An_sub.json')
     print(df.to_string())
 
     mes1 = pd.read_json('data/H_A36_wp0i12a0_24r025l70.json')
@@ -470,19 +470,22 @@ if switch == 8:
 
     plt.savefig('media/ST_H_MES_AG_ALL_VAR_i12A.png', dpi=300)
     plt.show()
-switch = 11
+
+switch = 12
+
 if switch == 9:
     mes1 = pd.read_json('data/H_MES_wp0i15a24_24r025l70ag08mm.json')
-    mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
-    mes2 = pd.read_csv('measurement/measurement_15A_torque_angle.csv')
+    mes1['Angle'] = np.linspace(-48, 48, len(mes1['Torque']))
+    mes2 = pd.read_csv('measurement/torque/measurement_15A.csv')
 
 
-    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (15A)')
-    plt.scatter(mes2['Angle'], mes2['T_min'], label="Measurement (15A) Minimum", color="r", marker=".")
-    plt.scatter(mes2['Angle'], mes2['T_avg'], label="Measurement (15A) Average", color="g", marker=".")
-    plt.scatter(mes2['Angle'], mes2['T_max'], label="Measurement (15A) Maximum", color="b", marker=".")
+    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='FEA (15 A)')
+    plt.scatter(mes2['ang_rot_mes_elec'], mes2['Tmin_mes [Nm]'], label="Measurement (15 A) Minimum", color="r", marker=".")
+    plt.scatter(mes2['ang_rot_mes_elec'], mes2['Tavg_mes [Nm]'], label="Measurement (15 A) Average", color="g", marker=".")
+    plt.scatter(mes2['ang_rot_mes_elec'], mes2['Tmax_mes [Nm]'], label="Measurement (15 A) Maximum", color="b", marker=".")
+    plt.plot(mes2['ang_rot_mes_elec'], mes2['Torque_50Hz_Cu [Nm]'], label='Analytical (15 A)')
 
-    plt.xticks(np.arange(-24, 25, 4), np.arange(-24, 25, 4), fontsize=12)
+    plt.xticks(np.arange(-48, 49, 8), np.arange(-48, 49, 8), fontsize=12)
     plt.yticks(np.arange(-4, 5, 1), np.arange(-4, 5, 1), fontsize=12)
     plt.xlabel('Rotor position [deg]', fontsize=12)
     plt.ylabel('Static torque [Nm]', fontsize=12)
@@ -495,12 +498,14 @@ if switch == 9:
 if switch == 10:
     mes1 = pd.read_json('data/H_MES_wp0i20a24_24r025l70ag08mm.json')
     mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
-    mes2 = pd.read_csv('measurement/measurement_20A_torque_angle.csv')
+    mes2 = pd.read_csv('measurement/torque/measurement_20A.csv')
 
-    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (20A)')
-    plt.scatter(mes2['Angle'], mes2['T_min'], label="Measurement (20A) Minimum", color="r", marker=".")
-    plt.scatter(mes2['Angle'], mes2['T_avg'], label="Measurement (20A) Average", color="g", marker=".")
-    plt.scatter(mes2['Angle'], mes2['T_max'], label="Measurement (20A) Maximum", color="b", marker=".")
+
+    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='FEA (20 A)')
+    plt.plot(mes2['ang_rot_mes_mech'], mes2['Torque_50Hz_Cu [Nm]'], label='Analytical (20 A)')
+    plt.scatter(mes2['ang_rot_mes_mech'], mes2['Tmin_mes [Nm]'], label="Measurement (20 A) Min.", color="r", marker=".")
+    plt.scatter(mes2['ang_rot_mes_mech'], mes2['Tavg_mes [Nm]'], label="Measurement (20 A) Avg.", color="g", marker=".")
+    plt.scatter(mes2['ang_rot_mes_mech'], mes2['Tmax_mes [Nm]'], label="Measurement (20 A) Max.", color="b", marker=".")
 
     plt.xticks(np.arange(-24, 25, 4), np.arange(-24, 25, 4), fontsize=12)
     plt.yticks(np.arange(-6, 7, 1), np.arange(-6, 7, 1), fontsize=12)
@@ -513,15 +518,15 @@ if switch == 10:
     plt.show()
 
 if switch == 11:
-    plt.figure(figsize=(15, 6))
     mes1 = pd.read_json('data/H_MES_wp0i25a24_24r025l70ag08mm.json')
     mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
-    mes2 = pd.read_csv('measurement/measurement_25A_torque_angle.csv')
+    mes2 = pd.read_csv('measurement/torque/measurement_25A.csv')
 
-    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (25A)')
-    plt.scatter(mes2['Angle'], mes2['T_min'], label="Measurement (25A) Minimum", color="r", marker=".")
-    plt.scatter(mes2['Angle'], mes2['T_avg'], label="Measurement (25A) Average", color="g", marker=".")
-    plt.scatter(mes2['Angle'], mes2['T_max'], label="Measurement (25A) Maximum", color="b", marker=".")
+    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='FEA (25 A)')
+    plt.plot(mes2['ang_rot_mes_mech'], mes2['Torque_50Hz_Cu [Nm]'], label='Analytical (25 A)')
+    plt.scatter(mes2['ang_rot_mes_mech'], mes2['Tmin_mes [Nm]'], label="Measurement (25 A) Min.", color="r", marker=".")
+    plt.scatter(mes2['ang_rot_mes_mech'], mes2['Tavg_mes [Nm]'], label="Measurement (25 A) Avg.", color="g", marker=".")
+    plt.scatter(mes2['ang_rot_mes_mech'], mes2['Tmax_mes [Nm]'], label="Measurement (25 A) Max.", color="b", marker=".")
 
     plt.xticks(np.arange(-24, 25, 4), np.arange(-24, 25, 4), fontsize=12)
     plt.yticks(np.arange(-8, 9, 2), np.arange(-8, 9, 2), fontsize=12)
@@ -536,12 +541,13 @@ if switch == 11:
 if switch == 12:
     mes1 = pd.read_json('data/H_MES_wp0i30a24_24r025l70ag08mm.json')
     mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
-    mes2 = pd.read_csv('measurement/measurement_30A_torque_angle.csv')
+    mes2 = pd.read_csv('measurement/torque/measurement_30A.csv')
 
-    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (30A)')
-    plt.scatter(mes2['Angle'], mes2['T_min'], label="Measurement (30A) Minimum", color="r", marker=".")
-    plt.scatter(mes2['Angle'], mes2['T_avg'], label="Measurement (30A) Average", color="g", marker=".")
-    plt.scatter(mes2['Angle'], mes2['T_max'], label="Measurement (30A) Maximum", color="b", marker=".")
+    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='FEA (30 A)')
+    plt.plot(mes2['ang_rot_mes_mech'], mes2['Torque_50Hz_Cu [Nm]'], label='Analytical (30 A)')
+    plt.scatter(mes2['ang_rot_mes_mech'], mes2['Tmin_mes [Nm]'], label="Measurement (30 A) Min.", color="r", marker=".")
+    plt.scatter(mes2['ang_rot_mes_mech'], mes2['Tavg_mes [Nm]'], label="Measurement (30 A) Avg.", color="g", marker=".")
+    plt.scatter(mes2['ang_rot_mes_mech'], mes2['Tmax_mes [Nm]'], label="Measurement (30 A) Max.", color="b", marker=".")
 
     plt.xticks(np.arange(-24, 25, 4), np.arange(-24, 25, 4), fontsize=12)
     plt.yticks(np.arange(-9, 10, 2), np.arange(-9, 10, 2), fontsize=12)
@@ -556,12 +562,13 @@ if switch == 12:
 if switch == 13:
     mes1 = pd.read_json('data/H_MES_wp0i35a24_24r025l70ag08mm.json')
     mes1['Angle'] = np.linspace(-24, 24, len(mes1['Torque']))
-    mes2 = pd.read_csv('measurement/measurement_35A_torque_angle.csv')
+    mes2 = pd.read_csv('measurement/torque/measurement_35A.csv')
 
-    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='Simulation (35A)')
-    plt.scatter(mes2['Angle'], mes2['T_min'], label="Measurement (35A) Minimum", color="r", marker=".")
-    plt.scatter(mes2['Angle'], mes2['T_avg'], label="Measurement (35A) Average", color="g", marker=".")
-    plt.scatter(mes2['Angle'], mes2['T_max'], label="Measurement (35A) Maximum", color="b", marker=".")
+    plt.plot(mes1['Angle'], -2 * mes1['Torque'], label='FEA (35 A)')
+    plt.plot(mes2['ang_rot_mes_mech'], mes2['Torque_50Hz_Cu [Nm]'], label='Analytical (35 A)')
+    plt.scatter(mes2['ang_rot_mes_mech'], mes2['Tmin_mes [Nm]'], label="Measurement (35 A) Min.", color="r", marker=".")
+    plt.scatter(mes2['ang_rot_mes_mech'], mes2['Tavg_mes [Nm]'], label="Measurement (35 A) Avg.", color="g", marker=".")
+    plt.scatter(mes2['ang_rot_mes_mech'], mes2['Tmax_mes [Nm]'], label="Measurement (35 A) Max.", color="b", marker=".")
 
     plt.xticks(np.arange(-24, 25, 4), np.arange(-24, 25, 4), fontsize=12)
     plt.yticks(np.arange(-9, 10, 2), np.arange(-9, 10, 2), fontsize=12)
